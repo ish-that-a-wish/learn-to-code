@@ -23,3 +23,33 @@ body {
   text-transform: uppercase;
   font-weight: 500;
 }
+
+/* Styled Button */
+.styled-btn {
+  background: linear-gradient(45deg, #FF6F61, #D1C4E9);
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  color: white;
+  font-size: 16px;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+  outline: none;
+}
+
+/* Button Hover Effect */
+.styled-btn:hover {
+  background: linear-gradient(45deg, #FF6F61, #7DD5CB);
+  transform: translateY(-5px); /* Lift the button slightly */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+/* Button Active Effect */
+.styled-btn:active {
+  transform: translateY(0); /* Bring the button back to original position */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Reset shadow on click */
+}
