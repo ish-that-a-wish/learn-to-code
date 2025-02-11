@@ -28,19 +28,38 @@ setInterval(function () {
     showTime();
 }, 1000);
 
+// Variables to store the mouse position
+let mouseX = 0;
+let mouseY = 0;
+
+// Set a smoothing factor for the gradient movement
+const smoothness = 0.1; // Higher value for slower movement
+
 // Function to update the gradient based on mouse position
-function updateGradient(event) {
-  // Get the mouse position relative to the viewport
-  const x = event.clientX;
-  const y = event.clientY;
+function updateGradient() {
+  // Calculate the percentage of the mouse's position on the screen
+  const xPercentage = (mouseX / window.innerWidth) * 100;
+  const yPercentage = (mouseY / window.innerHeight) * 100;
 
-  // Convert mouse position to percentage (0-100%)
-  const xPercentage = (x / window.innerWidth) * 100;
-  const yPercentage = (y / window.innerHeight) * 100;
-
-  // Set the background gradient to follow the mouse position
-  document.body.style.background = `linear-gradient(45deg, rgba(125, 213, 203, 1) ${xPercentage}%, rgba(44, 166, 164, 1) ${yPercentage}%)`;
+  // Apply the gradient with smooth transitions
+  document.body.style.background = `linear-gradient(45deg, rgba(125, 213, 203, 1) ${xPercentage}%, rgba(44, 166, 164, 1) ${yPercentage}%, rgba(255, 111, 97, 1) ${100 - xPercentage}%, rgba(209, 196, 233, 1) ${100 - yPercentage}%)`;
 }
 
-// Event listener to track mouse movement
-document.addEventListener('mousemove', updateGradient);
+// Function to track mouse movement
+function trackMouse(event) {
+  // Store the mouse position
+  mouseX = event.clientX;
+  mouseY = event.clientY;
+}
+
+// Event listener for mouse movement
+document.addEventListener('mousemove', trackMouse);
+
+// Smooth the gradient update every frame
+function animate() {
+  updateGradient();
+  requestAnimationFrame(animate); // Keep updating the gradient smoothly
+}
+
+// Start the animation loop
+animate();
