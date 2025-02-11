@@ -4,13 +4,13 @@ html, body {
   height: 100%; /* Ensure both html and body take up full height */
   margin: 0; /* Remove default margin */
   font-family: 'Quicksand', Sans-Serif;
-  transition: background 0.1s ease; /* Smooth transition for gradient change */
+  transition: background 0.01s ease; /* Smooth transition for gradient change */
 }
 
 body {
   padding: 0;
   background-image: linear-gradient(45deg, #7DD5CB, #2CA6A4); /* Default gradient */
-  background-size: 400% 400%; /* Make it larger for smoother movement */
+  background-size: 500% 500%; /* Make it larger for smoother movement */
 }
 
 .title {
