@@ -11,7 +11,7 @@ html {
 
 body {
   padding: 25px;
-  background-image: linear-gradient(#7DD5CB, #2CA6A4);
+  background-image: linear-gradient(#9EF6EC, #7DD5CB, #2CA6A4);
   background-size: cover; /* Ensure the background gradient covers the entire body */
   background-position: center; /* Keep the gradient centered */
 }
