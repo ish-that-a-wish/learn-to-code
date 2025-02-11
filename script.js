@@ -27,3 +27,20 @@ showTime();
 setInterval(function () {
     showTime();
 }, 1000);
+
+// Function to update the gradient based on mouse position
+function updateGradient(event) {
+  // Get the mouse position relative to the viewport
+  const x = event.clientX;
+  const y = event.clientY;
+
+  // Convert mouse position to percentage (0-100%)
+  const xPercentage = (x / window.innerWidth) * 100;
+  const yPercentage = (y / window.innerHeight) * 100;
+
+  // Set the background gradient to follow the mouse position
+  document.body.style.background = `linear-gradient(45deg, rgba(125, 213, 203, 1) ${xPercentage}%, rgba(44, 166, 164, 1) ${yPercentage}%)`;
+}
+
+// Event listener to track mouse movement
+document.addEventListener('mousemove', updateGradient);
