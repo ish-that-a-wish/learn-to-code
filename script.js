@@ -41,13 +41,13 @@ function updateGradient() {
   const xPercentage = (mouseX / window.innerWidth) * 100;
   const yPercentage = (mouseY / window.innerHeight) * 100;
 
-  // Apply the gradient with smooth transitions
+  // Update the background gradient based on the mouse's position
   document.body.style.background = `linear-gradient(45deg, rgba(125, 213, 203, 1) ${xPercentage}%, rgba(44, 166, 164, 1) ${yPercentage}%, rgba(255, 111, 97, 1) ${100 - xPercentage}%, rgba(209, 196, 233, 1) ${100 - yPercentage}%)`;
 }
 
 // Function to track mouse movement
 function trackMouse(event) {
-  // Store the mouse position
+  // Store the mouse position relative to the viewport
   mouseX = event.clientX;
   mouseY = event.clientY;
 }
